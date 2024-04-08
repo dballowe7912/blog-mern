@@ -1,16 +1,16 @@
 {
-  "dependencies": {
-    "express": "^4.19.2"
-  },
-  "name": "blog-in-mern",
-  "version": "1.0.0",
-  "main": "app.js",
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": ""
+	"name": "blog-in-mern",
+	"author": "",
+	"version": "1.0.0",
+	"main": "app.js",
+	"scripts": {
+		"client": "cd ./client && npm run dev"
+	},
+	"dependencies": {
+		"express": "^4.19.2"
+	},
+	"keywords": [],
+	"license": "ISC",
+	"devDependencies": {},
+	"description": ""
 }
