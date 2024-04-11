@@ -1,15 +1,13 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const connectDB = require("./utils/db");
 
 const app = express();
-
-const dbUrl = process.env.DB_URL || "mongodb://localhost:27017/mern-blog";
-mongoose.connect(dbUrl);
-const db = mongoose.connection;
-db.on("error", console.error.bind(console, "connection error:"));
-db.once("open", () => {
-	console.log("Database connected");
-});
+try {
+	connectDB();
+} catch (err) {
+	console.log(err);
+}
 
 app.get("/", (req, res) => {
 	res.send("API is running...");
