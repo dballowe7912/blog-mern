@@ -4,7 +4,7 @@ function PostsEntryGrid() {
 			<div className="container">
 				<div className="row mb-4">
 					<div className="col-sm-6">
-						<h2 className="posts-entry-title">Politics</h2>
+						<h2 className="posts-entry-title">Politic</h2>
 					</div>
 					<div className="col-sm-6 text-sm-end">
 						<a
@@ -17,7 +17,11 @@ function PostsEntryGrid() {
 				</div>
 
 				<div className="row">
-					<div className="col-lg-4 mb-4">
+					{/* Start Grid Component */}
+					<div
+						className="col-lg-4 mb-4"
+						style={{ border: "1px solid red" }}
+					>
 						<div className="post-entry-alt">
 							<a
 								href="single.html"
@@ -31,9 +35,7 @@ function PostsEntryGrid() {
 							</a>
 							<div className="excerpt">
 								<h2>
-									<a href="single.html">
-										Startup vs corporate: What job suits you best?
-									</a>
+									<a href="single.html">Grid One Title</a>
 								</h2>
 								<div className="post-meta align-items-center text-left clearfix">
 									<figure className="author-figure mb-0 me-3 float-start">
@@ -66,6 +68,7 @@ function PostsEntryGrid() {
 							</div>
 						</div>
 					</div>
+					{/* End Grid Component */}
 					<div className="col-lg-4 mb-4">
 						<div className="post-entry-alt">
 							<a

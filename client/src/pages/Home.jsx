@@ -25,3 +25,17 @@ function Home() {
 	);
 }
 export default Home;
+{
+	/* <MobileNav />
+			<Navbar />
+			<Retroy />
+			<PostsEntryLeft />
+			<PostsEntryRow />
+			<PostsEntryRight />
+			<PostsEntryGrid />
+			<PostsEntryAbstract />
+			<Footer /> */
+}
+{
+	/* <Preloader /> */
+}

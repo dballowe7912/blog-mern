@@ -1,30 +1,13 @@
-import MobileNav from "./components/MobileNav";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from "./pages/Home";
+import Error from "./pages/Error";
 
-import Retroy from "./layouts/Retroy";
-import PostsEntryLeft from "./layouts/PostsEntryLeft";
-import PostsEntryRow from "./layouts/PostsEntryRow";
-import PostsEntryRight from "./layouts/PostsEntryRight";
-import PostsEntryGrid from "./layouts/PostsEntryGrid";
-import PostsEntryAbstract from "./layouts/PostsEntryAbstract";
-// import Preloader from "./components/Preloader";
+const router = createBrowserRouter([
+	{ path: "/", Component: Home, errorElement: Error },
+]);
 
 function App() {
-	return (
-		<>
-			<MobileNav />
-			<Navbar />
-			<Retroy />
-			<PostsEntryLeft />
-			<PostsEntryRow />
-			<PostsEntryRight />
-			<PostsEntryGrid />
-			<PostsEntryAbstract />
-			<Footer />
-			{/* <Preloader /> */}
-		</>
-	);
+	return <RouterProvider router={router} />;
 }
 
 export default App;
