@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Navbar = () => {
 	return (
 		<nav className="site-nav">
@@ -6,12 +8,12 @@ const Navbar = () => {
 					<div className="site-navigation">
 						<div className="row g-0 align-items-center">
 							<div className="col-2">
-								<a
-									href="index.html"
+								<Link
+									to="/"
 									className="logo m-0 float-start"
 								>
 									Blogy<span className="text-primary">.</span>
-								</a>
+								</Link>
 							</div>
 							<div className="col-8 text-center">
 								<form
@@ -28,59 +30,48 @@ const Navbar = () => {
 
 								<ul className="js-clone-nav d-none d-lg-inline-block text-start site-menu mx-auto">
 									<li className="active">
-										<a href="index.html">Home</a>
+										<Link to="/">Home</Link>
+									</li>
+									<li className="active">
+										<Link to="/about">About</Link>
+									</li>
+									<li className="active">
+										<Link to="/contact">Contact</Link>
 									</li>
 									<li className="has-children">
-										<a href="category.html">Pages</a>
+										<Link to="#">Pages</Link>
 										<ul className="dropdown">
 											<li>
-												<a href="search-result.html">Search Result</a>
+												<Link to="/search">Search Result</Link>
 											</li>
 											<li>
-												<a href="blog.html">Blog</a>
+												<Link to="/blogs">All Blogs</Link>
 											</li>
 											<li>
-												<a href="single.html">Blog Single</a>
+												<Link to="/single">Blog Single</Link>
 											</li>
 											<li>
-												<a href="category.html">Category</a>
+												<Link to="/category">Category</Link>
 											</li>
 											<li>
-												<a href="about.html">About</a>
+												<Link to="/new">Create Blog</Link>
 											</li>
 											<li>
-												<a href="contact.html">Contact Us</a>
+												<Link to="/about">About</Link>
 											</li>
 											<li>
-												<a href="#">Menu One</a>
+												<Link to="/contact">Contact Us</Link>
 											</li>
 											<li>
-												<a href="#">Menu Two</a>
+												<Link to="/login">Login</Link>
 											</li>
-											<li className="has-children">
-												<a href="#">Dropdown</a>
-												<ul className="dropdown">
-													<li>
-														<a href="#">Sub Menu One</a>
-													</li>
-													<li>
-														<a href="#">Sub Menu Two</a>
-													</li>
-													<li>
-														<a href="#">Sub Menu Three</a>
-													</li>
-												</ul>
+											<li>
+												<Link to="/register">Register</Link>
+											</li>
+											<li>
+												<Link to="/logout">Logout</Link>
 											</li>
 										</ul>
-									</li>
-									<li>
-										<a href="category.html">Culture</a>
-									</li>
-									<li>
-										<a href="category.html">Business</a>
-									</li>
-									<li>
-										<a href="category.html">Politics</a>
 									</li>
 								</ul>
 							</div>
