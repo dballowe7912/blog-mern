@@ -1,6 +1,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const connectDB = require("./utils/db");
+const blogRouter = require("./routes/blog.routes");
+const cors = require("cors");
 
 const app = express();
 try {
@@ -8,6 +10,10 @@ try {
 } catch (err) {
 	console.log(err);
 }
+
+app.use(cors());
+
+app.use(blogRouter);
 
 app.get("/", (req, res) => {
 	res.send("API is running...");
