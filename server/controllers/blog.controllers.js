@@ -1,8 +1,8 @@
 const Blog = require("../models/blog.model");
 
-async function getAllblogs() {
+async function getAllblogs(req, res) {
 	const blogs = await Blog.find({});
-	console.log(blogs);
+	res.send(blogs);
 }
 
 module.exports = {
