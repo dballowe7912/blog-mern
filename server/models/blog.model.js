@@ -16,13 +16,18 @@ const blogSchema = new Schema({
 		default: "Donald J Ballowe",
 	},
 	date: {
-		type: String,
+		type: Date,
+		default: Date.now,
 	},
 	image: {
 		type: String,
 	},
 	category: {
 		type: String,
+	},
+	_user: {
+		type: Schema.Types.ObjectId,
+		ref: "User",
 	},
 });
 
