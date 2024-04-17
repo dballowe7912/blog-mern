@@ -8,6 +8,7 @@ module.exports = [
 		author: "Stranger Stories",
 		image: "images/img_1_horizontal.jpg",
 		category: "crime",
+		tags: ["criminal minds", "news", "bio", "update"],
 	},
 	{
 		title: "Latest Phising Scams",
@@ -15,6 +16,7 @@ module.exports = [
 		author: "Mr. Ballen",
 		image: "images/img_2_horizontal.jpg",
 		category: "crime",
+		tags: ["info", "phishing", "scams", "attention"],
 	},
 	{
 		title: "Hit and Run Leads to 2 Arrests",
@@ -22,6 +24,7 @@ module.exports = [
 		author: "Channel 4",
 		image: "images/img_3_horizontal.jpg",
 		category: "crime",
+		tags: ["update", "criminals", "solved"],
 	},
 	{
 		title: "Amber Alert for Washington",
@@ -29,6 +32,7 @@ module.exports = [
 		author: "8MC",
 		image: "images/img_4_horizontal.jpg",
 		category: "crime",
+		tags: ["missing", "news", "local", "amber alert"],
 	},
 	{
 		title: "Two Missing",
@@ -36,6 +40,7 @@ module.exports = [
 		author: "Nobody Knows",
 		image: "images/img_5_horizontal.jpg",
 		category: "crime",
+		tags: ["missing", "news", "local"],
 	},
 	{
 		title: "Twitter is now X",
@@ -43,6 +48,7 @@ module.exports = [
 		author: "Sammy Wallace",
 		image: "images/img_6_horizontal.jpg",
 		category: "news",
+		tags: ["twitter", "social apps", "x"],
 	},
 	{
 		title: "Facebook Changes Owners",
@@ -50,6 +56,7 @@ module.exports = [
 		author: "News at Nine",
 		image: "images/img_7_horizontal.jpg",
 		category: "news",
+		tags: ["facebook", "update", "late breaking"],
 	},
 	{
 		title: "Congress Seat Taken",
@@ -57,6 +64,7 @@ module.exports = [
 		author: "US News",
 		image: "images/img_1_horizontal.jpg",
 		category: "news",
+		tags: ["election", "government", "congress"],
 	},
 	{
 		title: "Election Time 2024",
@@ -64,6 +72,7 @@ module.exports = [
 		author: "Dr. Jones",
 		image: "images/img_2_horizontal.jpg",
 		category: "news",
+		tags: ["election", "government", "president"],
 	},
 	{
 		title: "Global Warming Now",
@@ -71,6 +80,7 @@ module.exports = [
 		author: "Sammy Wallace",
 		image: "images/img_3_horizontal.jpg",
 		category: "news",
+		tags: ["coverup", "current", "global warming"],
 	},
 	{
 		title: "The Real Truth of Covid",
@@ -78,6 +88,7 @@ module.exports = [
 		author: "Hannah Anderson",
 		image: "images/img_4_horizontal.jpg",
 		category: "conspiracy",
+		tags: ["conspiracy", "government", "coverup"],
 	},
 	{
 		title: "Trump is Illuminati",
@@ -85,6 +96,7 @@ module.exports = [
 		author: "Channel 7",
 		image: "images/img_5_horizontal.jpg",
 		category: "conspiracy",
+		tags: ["conspiracy", "government", "trump"],
 	},
 	{
 		title: "The Bible as a Threat to Conform",
@@ -92,6 +104,7 @@ module.exports = [
 		author: "Dr. Willard",
 		image: "images/img_6_horizontal.jpg",
 		category: "conspiracy",
+		tags: ["conspiracy", "government"],
 	},
 	{
 		title: "Cancer is a Population Cure",
@@ -99,6 +112,7 @@ module.exports = [
 		author: "The Ghost",
 		image: "images/img_7_horizontal.jpg",
 		category: "conspiracy",
+		tags: ["conspiracy", "lies", "coverup"],
 	},
 	{
 		title: "The Truth About the Moon Missions",
@@ -106,6 +120,7 @@ module.exports = [
 		author: "Wyatt Earl",
 		image: "images/img_1_horizontal.jpg",
 		category: "conspiracy",
+		tags: ["conspiracy", "government", "ufos", "coverup"],
 	},
 	{
 		title: "UFO in the Attic",
@@ -113,6 +128,7 @@ module.exports = [
 		author: "This is Samson TV",
 		image: "images/img_2_horizontal.jpg",
 		category: "conspiracy",
+		tags: ["conspiracy", "government", "ufos"],
 	},
 	{
 		title: "Why is my internet so slow?",
@@ -120,6 +136,7 @@ module.exports = [
 		author: "Frankie Anderson",
 		image: "images/img_3_horizontal.jpg",
 		category: "technology",
+		tags: ["technology", "hacks", "advise"],
 	},
 	{
 		title: "Google Everywhere",
@@ -127,6 +144,7 @@ module.exports = [
 		author: "Sammy Smith",
 		image: "images/img_4_horizontal.jpg",
 		category: "technology",
+		tags: ["technology", "google"],
 	},
 	{
 		title: "5 Best Laptops of 2024",
@@ -134,6 +152,7 @@ module.exports = [
 		author: "Jackie Robinson",
 		image: "images/img_5_horizontal.jpg",
 		category: "technology",
+		tags: ["technology", "laptops", "computers", "advise"],
 	},
 	{
 		title: "Why Buy an Older Model Phone",
@@ -141,6 +160,7 @@ module.exports = [
 		author: "Chris Cringle",
 		image: "images/img_6_horizontal.jpg",
 		category: "technology",
+		tags: ["technology", "phones", "hacks"],
 	},
 	{
 		title: "Website Builder VS Custom Code",
@@ -148,6 +168,7 @@ module.exports = [
 		author: "Hannah Anderson",
 		image: "images/img_7_horizontal.jpg",
 		category: "technology",
+		tags: ["technology", "websites", "code", "business"],
 	},
 	{
 		title: "Succulent Plants in Winter",
@@ -155,6 +176,7 @@ module.exports = [
 		author: "Don't Throw it Out",
 		image: "images/img_1_horizontal.jpg",
 		category: "gardening",
+		tags: ["outside", "gardening", "flowers", "hacks"],
 	},
 	{
 		title: "Keeping Roses Longer",
@@ -162,6 +184,7 @@ module.exports = [
 		author: "John Wilks",
 		image: "images/img_2_horizontal.jpg",
 		category: "gardening",
+		tags: ["outside", "gardening", "flowers", "hacks"],
 	},
 	{
 		title: "How to Water an Aloe Vera",
@@ -169,6 +192,7 @@ module.exports = [
 		author: "Anne Rice",
 		image: "images/img_3_horizontal.jpg",
 		category: "gardening",
+		tags: ["outside", "gardening", "house plants", "hacks"],
 	},
 	{
 		title: "Vegetables in Winter",
@@ -176,6 +200,7 @@ module.exports = [
 		author: "Chris Robinson",
 		image: "images/img_4_horizontal.jpg",
 		category: "gardening",
+		tags: ["outside", "gardening", "vegetables", "hacks"],
 	},
 	{
 		title: "How to Clone a Lily",
@@ -183,6 +208,7 @@ module.exports = [
 		author: "Don't Throw it Out",
 		image: "images/img_5_horizontal.jpg",
 		category: "gardening",
+		tags: ["outside", "gardening", "flowers"],
 	},
 	{
 		title: "Chicken Rice and Sausage Recipes",
@@ -190,6 +216,7 @@ module.exports = [
 		author: "Chef Jeff",
 		image: "images/img_6_horizontal.jpg",
 		category: "food",
+		tags: ["recipes", "food", "health"],
 	},
 	{
 		title: "5 Mexican Delicacies",
@@ -197,6 +224,7 @@ module.exports = [
 		author: "Chef Gomez",
 		image: "images/img_7_horizontal.jpg",
 		category: "food",
+		tags: ["recipes", "food", "health", "mexican food"],
 	},
 	{
 		title: "Cheese Lovers",
@@ -204,6 +232,7 @@ module.exports = [
 		author: "Nick Rogers",
 		image: "images/img_1_horizontal.jpg",
 		category: "food",
+		tags: ["recipes", "food", "health"],
 	},
 	{
 		title: "Instant Rice VS Rice Cooker",
@@ -211,6 +240,7 @@ module.exports = [
 		author: "Chef Gomez",
 		image: "images/img_2_horizontal.jpg",
 		category: "food",
+		tags: ["recipes", "food", "health"],
 	},
 	{
 		title: "Cleaning Grease Traps",
@@ -218,6 +248,7 @@ module.exports = [
 		author: "Lisa Fox",
 		image: "images/img_3_horizontal.jpg",
 		category: "food",
+		tags: ["kitchen", "kitchen hacks", "cleaning"],
 	},
 	{
 		title: "How to flush a Dogs Ears",
@@ -225,6 +256,7 @@ module.exports = [
 		author: "Jack Dean",
 		image: "images/img_4_horizontal.jpg",
 		category: "pets",
+		tags: ["pets", "dogs", "pet health", "dog hygene"],
 	},
 	{
 		title: "Dog Food 101",
@@ -232,6 +264,7 @@ module.exports = [
 		author: "Juan Lopez",
 		image: "images/img_5_horizontal.jpg",
 		category: "pets",
+		tags: ["pets", "dogs", "pet health", "dog food"],
 	},
 	{
 		title: "How to Clip Dogs Nails Safely",
@@ -239,6 +272,7 @@ module.exports = [
 		author: "Chloe Bell",
 		image: "images/img_6_horizontal.jpg",
 		category: "pets",
+		tags: ["pets", "dogs", "pet health", "dog hygene"],
 	},
 	{
 		title: "How Expensive is Your Vet Bill",
@@ -246,6 +280,7 @@ module.exports = [
 		author: "Mary Rice",
 		image: "images/img_7_horizontal.jpg",
 		category: "pets",
+		tags: ["pets", "dogs", "cats", "pet health", "vet"],
 	},
 	{
 		title: "What Minerals are Your Dogs Missing?",
@@ -253,5 +288,6 @@ module.exports = [
 		author: "Chef Gomez",
 		image: "images/img_1_horizontal.jpg",
 		category: "pets",
+		tags: ["pets", "dogs", "pet health", "dog food"],
 	},
 ];
