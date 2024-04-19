@@ -1,8 +1,9 @@
 import truncate from "../../utils/truncate";
+import formatDate from "../../utils/formatDate";
+import PropTypes from "prop-types";
 
 function BlogEntry({ blog }) {
-	const { _id, title, body, author, date, image, category } = blog;
-
+	const { _id, title, body, date, image, category } = blog;
 	return (
 		<div className="blog-entry d-flex blog-entry-search-item">
 			<a
@@ -18,8 +19,7 @@ function BlogEntry({ blog }) {
 			</a>
 			<div>
 				<span className="date">
-					{/* TODO setup date link to point to date range of posts  */}
-					{date} &#8226;<a href="#"></a>
+					{formatDate(date)} &#8226; <a href="#">{category}</a>
 				</span>
 				<h2>
 					<a href={`/single/${_id}`}>{title}</a>
@@ -37,5 +37,11 @@ function BlogEntry({ blog }) {
 		</div>
 	);
 }
+
+const propTypes = {
+	blog: PropTypes.object,
+};
+
+BlogEntry.propTypes = propTypes;
 
 export default BlogEntry;
