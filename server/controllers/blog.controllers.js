@@ -21,9 +21,19 @@ async function getBlogsInCategory(req, res) {
 
 // GET /blogs/tags/:tag
 async function getBlogsWithTags(req, res) {
+	const tag = req.params.tag;
+	console.log(tag);
 	const blogs = await Blog.find({});
-	const tagged = blogs.filter(tag === req.params.tag);
-	res.send(blogs);
+	let result = [];
+	let index = 0;
+	while (index < blogs.length) {
+		let blog = blogs[index];
+		if (blog.tags.includes(tag)) {
+			result.push(blog);
+		}
+		index++;
+	}
+	res.send(result);
 }
 
 module.exports = {

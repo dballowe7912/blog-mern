@@ -25,7 +25,7 @@ const blogSchema = new Schema({
 	category: {
 		type: String,
 	},
-	tags: [String],
+	tags: [],
 	_user: {
 		type: Schema.Types.ObjectId,
 		ref: "User",
