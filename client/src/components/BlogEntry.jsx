@@ -19,7 +19,8 @@ function BlogEntry({ blog }) {
 			</a>
 			<div>
 				<span className="date">
-					{formatDate(date)} &#8226; <a href="#">{category}</a>
+					{formatDate(date)} &#8226;{" "}
+					<a href={`/blogs/category/${category}`}>{category}</a>
 				</span>
 				<h2>
 					<a href={`/single/${_id}`}>{title}</a>
