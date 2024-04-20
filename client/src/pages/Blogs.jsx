@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 import MobileNav from "../components/MobileNav";
 import Navbar from "../components/Navbar";
 
@@ -12,10 +13,11 @@ import SidebarSearch from "../components/sidebars/SidebarSearch";
 import SidebarPopularPosts from "../components/sidebars/SidebarPopularPosts";
 import SidebarCategories from "../components/sidebars/SidebarCategories";
 import SidebarTags from "../components/sidebars/SidebarTags";
+import Footer from "../components/Footer";
 
 function Blog() {
 	const [blogs, setBlogs] = useState([]);
-	const fetchBlogs = async () => {
+	const fetchBlogs = () => {
 		axios.get("http://127.0.0.1:8080/blogs").then((res) => {
 			setBlogs(res.data);
 		});
@@ -23,6 +25,10 @@ function Blog() {
 
 	useEffect(() => {
 		fetchBlogs();
+		AOS.init({
+			duration: 1200,
+			easing: "ease-in",
+		});
 	}, [blogs]);
 
 	return (
@@ -41,18 +47,17 @@ function Blog() {
 								/>
 							))}
 						</div>
+						<div className="col-lg-4 sidebar">
+							<SidebarSearch />
+							<SidebarPopularPosts />
+							<SidebarCategories />
+							<SidebarTags />
+						</div>
 					</div>
+					<Pagination />
 				</div>
 			</div>
-			{/* TODO fix sidebar */}
-			<div className="col-lg-4 sidebar">
-				<Pagination />
-				<SidebarSearch />
-				<SidebarPopularPosts />
-				<SidebarCategories />
-				<SidebarTags />
-			</div>
-			{/* <Preloader /> */}
+			<Footer />
 		</>
 	);
 }
