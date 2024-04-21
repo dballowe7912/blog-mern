@@ -1,8 +1,8 @@
 {
 	"name": "blog-in-mern",
-	"author": "",
+	"author": "Donald Ballowe",
 	"version": "1.0.0",
-	"main": "app.js",
+	"main": "server/app.js",
 	"scripts": {
 		"start": "cd ./server && nodemon app.js",
 		"client": "cd ./client && npm run dev",
