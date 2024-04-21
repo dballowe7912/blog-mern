@@ -8,7 +8,11 @@ import PostsEntryRow from "../layouts/PostsEntryRow";
 import PostsEntryRight from "../layouts/PostsEntryRight";
 import PostsEntryGrid from "../layouts/PostsEntryGrid";
 import PostsEntryAbstract from "../layouts/PostsEntryAbstract";
+import { useContext } from "react";
+import { BlogContext } from "../context/BlogState/BlogContext";
+
 function Home() {
+	const blogs = useContext(BlogContext);
 	return (
 		<>
 			<MobileNav />
@@ -17,7 +21,7 @@ function Home() {
 			<PostsEntryLeft />
 			<PostsEntryRow />
 			<PostsEntryRight />
-			<PostsEntryGrid />
+			<PostsEntryGrid blogs={blogs} />
 			<PostsEntryAbstract />
 			<Footer />
 			{/* <Preloader /> */}
