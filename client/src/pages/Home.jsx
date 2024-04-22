@@ -17,12 +17,16 @@ function Home() {
 		<>
 			<MobileNav />
 			<Navbar />
+			{/* TODO get blogs and pass to individual layouts */}
+			{/* 5 blogs needed: */}
 			<Retro />
 			<PostsEntryLeft />
-			<PostsEntryRow />
 			<PostsEntryRight />
-			<PostsEntryGrid blogs={blogs} />
+			{/* 4 blogs needed: */}
+			<PostsEntryRow />
 			<PostsEntryAbstract />
+			{/* 9 - - blogs needed: */}
+			<PostsEntryGrid blogs={blogs} />
 			<Footer />
 			{/* <Preloader /> */}
 		</>
