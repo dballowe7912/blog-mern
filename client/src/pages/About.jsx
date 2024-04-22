@@ -1,5 +1,6 @@
-import { useEffect } from "react";
 import AOS from "aos";
+import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
 
 const About = () => {
 	AOS.init({
@@ -9,6 +10,7 @@ const About = () => {
 
 	return (
 		<>
+			<Navbar />
 			<div className="section sec-halfs py-0">
 				<div className="container">
 					<div className="half-content d-lg-flex align-items-stretch">
@@ -311,6 +313,7 @@ const About = () => {
 					</div>
 				</div>
 			</div>
+			<Footer />
 		</>
 	);
 };
