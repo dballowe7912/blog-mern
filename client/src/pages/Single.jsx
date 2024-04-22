@@ -1,4 +1,9 @@
+import { useContext } from "react";
+import { BlogContext } from "../context/BlogState/BlogContext";
+
 function Single() {
+	const blogs = useContext(BlogContext);
+	console.log(blogs);
 	return (
 		<>
 			<div
