@@ -5,6 +5,7 @@ import Error from "./pages/Error";
 import Single from "./pages/Single";
 import About from "./pages/About";
 import Category from "./pages/Category";
+import Contact from "./pages/Contact";
 
 const router = createBrowserRouter([
 	{ path: "/", Component: Home, errorElement: Error },
@@ -12,6 +13,7 @@ const router = createBrowserRouter([
 	{ path: "/single", Component: Single },
 	{ path: "/about", Component: About },
 	{ path: "/category", Component: Category },
+	{ path: "/contact", Component: Contact },
 ]);
 
 function App() {
