@@ -1,4 +1,12 @@
-function Hero() {
+import AOS from "aos";
+import PropTypes from "prop-types";
+
+function Hero({ title }) {
+	AOS.init({
+		duration: 1200,
+		easing: "ease-in",
+	});
+
 	return (
 		<div className="hero overlay inner-page bg-primary py-5">
 			<div className="container">
@@ -8,7 +16,7 @@ function Hero() {
 							className="heading text-white mb-3"
 							data-aos="fade-up"
 						>
-							Blog
+							{title ? title : "Blogs"}
 						</h1>
 					</div>
 				</div>
@@ -16,5 +24,11 @@ function Hero() {
 		</div>
 	);
 }
+
+const propTypes = {
+	title: PropTypes.string,
+};
+
+Hero.propTypes = propTypes;
 
 export default Hero;
