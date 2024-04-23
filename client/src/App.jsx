@@ -6,14 +6,16 @@ import Single from "./pages/Single";
 import About from "./pages/About";
 import Category from "./pages/Category";
 import Contact from "./pages/Contact";
+import SearchResult from "./pages/SearchResult";
 
 const router = createBrowserRouter([
 	{ path: "/", Component: Home, errorElement: Error },
 	{ path: "/blogs", Component: Blogs },
-	{ path: "/single", Component: Single },
+	{ path: "/single/:id", Component: Single },
 	{ path: "/about", Component: About },
 	{ path: "/category", Component: Category },
 	{ path: "/contact", Component: Contact },
+	{ path: "/search", Component: SearchResult },
 ]);
 
 function App() {
