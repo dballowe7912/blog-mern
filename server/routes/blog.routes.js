@@ -10,9 +10,9 @@ const {
 
 const router = express.Router();
 
-router.get("/blogs", catchAsync(getAllblogs));
-router.get("/blogs/:id", catchAsync(getBlogById));
-router.get("/blogs/category/:category", catchAsync(getBlogsInCategory));
-router.get("/blogs/tags/:tag", catchAsync(getBlogsWithTags));
+router.get("/", catchAsync(getAllblogs));
+router.get("/:id", catchAsync(getBlogById));
+router.get("/category/:category", catchAsync(getBlogsInCategory));
+router.get("/tags/:tag", catchAsync(getBlogsWithTags));
 
 module.exports = router;

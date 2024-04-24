@@ -13,7 +13,7 @@ try {
 
 app.use(cors());
 
-app.use(blogRouter);
+app.use("/api/blogs", blogRouter);
 
 app.get("/", (req, res) => {
 	res.send("API is running...");
