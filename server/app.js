@@ -1,9 +1,10 @@
 const express = require("express");
-const mongoose = require("mongoose");
-const connectDB = require("./utils/db");
-const blogRouter = require("./routes/blog.routes");
 const cors = require("cors");
+const bodyParser = require("body-parser");
 
+const blogRouter = require("./routes/blog.routes");
+
+const connectDB = require("./utils/db");
 const app = express();
 try {
 	connectDB();
@@ -12,8 +13,10 @@ try {
 }
 
 app.use(cors());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use("/api/blogs", blogRouter);
+app.use("/api/blogs", require("./routes/blog.routes"));
 
 app.get("/", (req, res) => {
 	res.send("API is running...");

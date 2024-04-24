@@ -1,4 +1,5 @@
 const express = require("express");
+const router = express.Router();
 const catchAsync = require("../utils/catchAsync");
 
 const {
@@ -7,8 +8,6 @@ const {
 	getBlogsInCategory,
 	getBlogsWithTags,
 } = require("../controllers/blog.controllers");
-
-const router = express.Router();
 
 router.get("/", catchAsync(getAllblogs));
 router.get("/:id", catchAsync(getBlogById));
