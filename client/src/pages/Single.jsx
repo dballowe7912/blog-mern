@@ -1,9 +1,17 @@
 import { useContext } from "react";
 import { BlogContext } from "../context/BlogState/BlogContext";
+import { useParams } from "react-router-dom";
+import formatDate from "../../utils/formatDate";
 
 function Single() {
 	const blogs = useContext(BlogContext);
-	console.log(blogs);
+	const params = useParams();
+	const blog = blogs.find((blog) => blog._id === params.id);
+	const { title, author, date, body, image } = blog;
+
+	if (!blog) {
+		return "Loading...";
+	}
 	return (
 		<>
 			<div
@@ -14,9 +22,7 @@ function Single() {
 					<div className="row same-height justify-content-center">
 						<div className="col-md-6">
 							<div className="post-entry text-center">
-								<h1 className="mb-4">
-									Do not assume your user data in the cloud is safe
-								</h1>
+								<h1 className="mb-4">{title}</h1>
 								<div className="post-meta align-items-center text-center">
 									<figure className="author-figure mb-0 me-3 d-inline-block">
 										<img
@@ -25,8 +31,8 @@ function Single() {
 											className="img-fluid"
 										/>
 									</figure>
-									<span className="d-inline-block mt-1">By Carl Atkinson</span>
-									<span>&nbsp;-&nbsp; February 10, 2019</span>
+									<span className="d-inline-block mt-1">By {author}</span>
+									<span>&nbsp;-&nbsp; {formatDate(date)}</span>
 								</div>
 							</div>
 						</div>
@@ -39,32 +45,11 @@ function Single() {
 					<div className="row blog-entries element-animate">
 						<div className="col-md-12 col-lg-8 main-content">
 							<div className="post-content-body">
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-									Praesentium nam quas inventore, ut iure iste modi eos adipisci
-									ad ea itaque labore earum autem nobis et numquam, minima eius.
-									Nam eius, non unde ut aut sunt eveniet rerum repellendus
-									porro.
-								</p>
-								<p>
-									Sint ab voluptates itaque, ipsum porro qui obcaecati cumque
-									quas sit vel. Voluptatum provident id quis quo. Eveniet
-									maiores perferendis officia veniam est laborum, expedita fuga
-									doloribus natus repellendus dolorem ab similique sint eius
-									cupiditate necessitatibus, magni nesciunt ex eos.
-								</p>
-								<p>
-									Quis eius aspernatur, eaque culpa cumque reiciendis, nobis at
-									earum assumenda similique ut? Aperiam vel aut, ex
-									exercitationem eos consequuntur eaque culpa totam, deserunt,
-									aspernatur quae eveniet hic provident ullam tempora error
-									repudiandae sapiente illum rerum itaque voluptatem. Commodi,
-									sequi.
-								</p>
+								<p>{body}</p>
 								<div className="row my-4">
 									<div className="col-md-12 mb-4">
 										<img
-											src="images/hero_1.jpg"
+											src={image}
 											alt="Image placeholder"
 											className="img-fluid rounded"
 										/>

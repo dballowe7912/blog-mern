@@ -1,7 +1,12 @@
-function PostEntryHorizontal() {
+import PropTypes from "prop-types";
+
+function PostEntryHorizontal({ blog }) {
+	console.log(blog);
+	if (!blog) return "Loading...";
+	const { _id: id, title, date } = blog;
 	return (
 		<a
-			href="single.html"
+			href={`/single/${id}`}
 			className="h-entry mb-30 v-height gradient"
 		>
 			<div
@@ -12,10 +17,17 @@ function PostEntryHorizontal() {
 			></div>
 
 			<div className="text">
-				<span className="date">Apr. 14th, 2022</span>
-				<h2>AI can now kill those annoying cookie pop-ups</h2>
+				<span className="date">{date}</span>
+				<h2>{title}</h2>
 			</div>
 		</a>
 	);
 }
+
+const propTypes = {
+	blog: PropTypes.object,
+};
+
+PostEntryHorizontal.propTypes = propTypes;
+
 export default PostEntryHorizontal;
