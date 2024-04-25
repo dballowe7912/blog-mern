@@ -1,8 +1,11 @@
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
+const dotenv = require("dotenv").config();
+const morgan = require("morgan");
 
-const blogRouter = require("./routes/blog.routes");
+let NODE_ENV = process.env.NODE_ENV;
+let PORT = process.env.PORT;
 
 const connectDB = require("./utils/db");
 const app = express();
@@ -10,6 +13,9 @@ try {
 	connectDB();
 } catch (err) {
 	console.log(err);
+}
+if (NODE_ENV === "development") {
+	app.use(morgan("dev"));
 }
 
 app.use(cors());
@@ -23,5 +29,5 @@ app.get("/", (req, res) => {
 });
 
 app.listen(8080, () => {
-	console.log(`Server is listening on port 8080`);
+	console.log(`Server is listening on port ${PORT} in ${NODE_ENV} mode.`);
 });
