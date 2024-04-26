@@ -1,26 +1,26 @@
 import PropTypes from "prop-types";
+import formatDate from "../../../utils/formatDate";
+import { Link } from "react-router-dom";
 
 function PostEntryHorizontal({ blog }) {
-	console.log(blog);
-	if (!blog) return "Loading...";
-	const { _id: id, title, date } = blog;
+	const { _id: id, title, date, image } = blog;
 	return (
-		<a
-			href={`/single/${id}`}
+		<Link
+			to={`/single/${id}`}
 			className="h-entry mb-30 v-height gradient"
 		>
 			<div
 				className="featured-img"
 				style={{
-					backgroundImage: "url('images/img_2_horizontal.jpg')",
+					backgroundImage: `url(${image})`,
 				}}
 			></div>
 
 			<div className="text">
-				<span className="date">{date}</span>
+				<span className="date">{formatDate(date)}</span>
 				<h2>{title}</h2>
 			</div>
-		</a>
+		</Link>
 	);
 }
 

@@ -1,19 +1,31 @@
-function PostEntryVertical() {
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
+import formatDate from "../../../utils/formatDate";
+
+function PostEntryVertical({ blog }) {
+	const { _id: id, title, date, image } = blog;
 	return (
-		<a
-			href="single.html"
+		<Link
+			to={`/single/${id}`}
 			className="h-entry img-5 h-100 gradient"
 		>
 			<div
 				className="featured-img"
-				style={{ backgroundImage: "url('images/img_1_vertical.jpg')" }}
+				style={{ backgroundImage: `url(${image})` }}
 			></div>
 
 			<div className="text">
-				<span className="date">Apr. 14th, 2022</span>
-				<h2>Why is my internet so slow?</h2>
+				<span className="date">{formatDate(date)}</span>
+				<h2>{title}</h2>
 			</div>
-		</a>
+		</Link>
 	);
 }
+
+const propTypes = {
+	blog: PropTypes.object,
+};
+
+PostEntryVertical.propTypes = propTypes;
+
 export default PostEntryVertical;
