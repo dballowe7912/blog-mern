@@ -1,22 +1,37 @@
 import { useContext } from "react";
 import { BlogContext } from "../context/BlogState/BlogContext";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
+
+// components
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import SidebarCategories from "../components/sidebars/SidebarCategories";
+import SidebarTags from "../components/sidebars/SidebarTags";
+import SidebarPopularPosts from "../components/sidebars/SidebarPopularPosts";
+import SidebarBio from "../components/sidebars/SidebarBio";
+import SidebarSearch from "../components/sidebars/SidebarSearch";
+
+//  utils
 import formatDate from "../../utils/formatDate";
+import MoreBlogPosts from "../components/MoreBlogPosts";
+import CommentForm from "../components/CommentForm";
 
 function Single() {
 	const blogs = useContext(BlogContext);
 	const params = useParams();
 	const blog = blogs.find((blog) => blog._id === params.id);
-	const { title, author, date, body, image } = blog;
+	const { title, author, date, body, image, category, tags } = blog;
 
 	if (!blog) {
 		return "Loading...";
 	}
+
 	return (
 		<>
+			<Navbar />
 			<div
 				className="site-cover site-cover-sm same-height overlay single-page"
-				style={{ backgroundImage: "url('images/hero_5.jpg')" }}
+				style={{ backgroundImage: `url(../${image})` }}
 			>
 				<div className="container">
 					<div className="row same-height justify-content-center">
@@ -26,7 +41,7 @@ function Single() {
 								<div className="post-meta align-items-center text-center">
 									<figure className="author-figure mb-0 me-3 d-inline-block">
 										<img
-											src="images/person_1.jpg"
+											src="../images/person_1.jpg"
 											alt="Image"
 											className="img-fluid"
 										/>
@@ -46,29 +61,31 @@ function Single() {
 						<div className="col-md-12 col-lg-8 main-content">
 							<div className="post-content-body">
 								<p>{body}</p>
+								{/* TODO create Photo Section */}
 								<div className="row my-4">
 									<div className="col-md-12 mb-4">
 										<img
-											src={image}
+											src="../images/img_2_horizontal.jpg"
 											alt="Image placeholder"
 											className="img-fluid rounded"
 										/>
 									</div>
 									<div className="col-md-6 mb-4">
 										<img
-											src="images/img_2_horizontal.jpg"
+											src="../images/img_2_horizontal.jpg"
 											alt="Image placeholder"
 											className="img-fluid rounded"
 										/>
 									</div>
 									<div className="col-md-6 mb-4">
 										<img
-											src="images/img_3_horizontal.jpg"
+											src="../images/img_2_horizontal.jpg"
 											alt="Image placeholder"
 											className="img-fluid rounded"
 										/>
 									</div>
 								</div>
+								{/* more of blog post  */}
 								<p>
 									Quibusdam autem, quas molestias recusandae aperiam molestiae
 									modi qui ipsam vel. Placeat tenetur veritatis tempore quos
@@ -109,14 +126,23 @@ function Single() {
 									consequuntur quae fuga vitae fugit?
 								</p>
 							</div>
-
+							{/* End blog post */}
 							<div className="pt-5">
 								<p>
-									Categories: <a href="#">Food</a>, <a href="#">Travel</a> Tags:{" "}
-									<a href="#">#manila</a>, <a href="#">#asia</a>
+									Categories:{" "}
+									<Link to={`/category/${category}`}>{category}</Link> Tags:{" "}
+									{tags.map((tag) => (
+										<Link
+											to={`/tags/${tag}`}
+											key={`tag-${tag}`}
+										>
+											#{tag}{" "}
+										</Link>
+									))}
 								</p>
 							</div>
 
+							{/* Comment Section */}
 							<div className="pt-5 comment-wrap">
 								<h3 className="mb-5 heading">6 Comments</h3>
 								<ul className="comment-list">
@@ -300,402 +326,25 @@ function Single() {
 										</div>
 									</li>
 								</ul>
-								{/* <!-- END comment-list --> */}
-
-								<div className="comment-form-wrap pt-5">
-									<h3 className="mb-5">Leave a comment</h3>
-									<form
-										action="#"
-										className="p-5 bg-light"
-									>
-										<div className="form-group">
-											<label htmlFor="name">Name *</label>
-											<input
-												type="text"
-												className="form-control"
-												id="name"
-											/>
-										</div>
-										<div className="form-group">
-											<label htmlFor="email">Email *</label>
-											<input
-												type="email"
-												className="form-control"
-												id="email"
-											/>
-										</div>
-										<div className="form-group">
-											<label htmlFor="website">Website</label>
-											<input
-												type="url"
-												className="form-control"
-												id="website"
-											/>
-										</div>
-
-										<div className="form-group">
-											<label htmlFor="message">Message</label>
-											<textarea
-												name=""
-												id="message"
-												cols="30"
-												rows="10"
-												className="form-control"
-											></textarea>
-										</div>
-										<div className="form-group">
-											<input
-												type="submit"
-												value="Post Comment"
-												className="btn btn-primary"
-											/>
-										</div>
-									</form>
-								</div>
+								<CommentForm />
 							</div>
 						</div>
 
 						{/* <!-- END main-content --> */}
 
 						<div className="col-md-12 col-lg-4 sidebar">
-							<div className="sidebar-box search-form-wrap">
-								<form
-									action="#"
-									className="sidebar-search-form"
-								>
-									<span className="bi-search"></span>
-									<input
-										type="text"
-										className="form-control"
-										id="s"
-										placeholder="Type a keyword and hit enter"
-									/>
-								</form>
-							</div>
-							{/* <!-- END sidebar-box --> */}
-							<div className="sidebar-box">
-								<div className="bio text-center">
-									<img
-										src="images/person_2.jpg"
-										alt="Image Placeholder"
-										className="img-fluid mb-3"
-									/>
-									<div className="bio-body">
-										<h2>Hannah Anderson</h2>
-										<p className="mb-4">
-											Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-											Exercitationem facilis sunt repellendus excepturi beatae
-											porro debitis voluptate nulla quo veniam fuga sit
-											molestias minus.
-										</p>
-										<p>
-											<a
-												href="#"
-												className="btn btn-primary btn-sm rounded px-2 py-2"
-											>
-												Read my bio
-											</a>
-										</p>
-										<p className="social">
-											<a
-												href="#"
-												className="p-2"
-											>
-												<span className="fa fa-facebook"></span>
-											</a>
-											<a
-												href="#"
-												className="p-2"
-											>
-												<span className="fa fa-twitter"></span>
-											</a>
-											<a
-												href="#"
-												className="p-2"
-											>
-												<span className="fa fa-instagram"></span>
-											</a>
-											<a
-												href="#"
-												className="p-2"
-											>
-												<span className="fa fa-youtube-play"></span>
-											</a>
-										</p>
-									</div>
-								</div>
-							</div>
-							{/* <!-- END sidebar-box --> */}
-							<div className="sidebar-box">
-								<h3 className="heading">Popular Posts</h3>
-								<div className="post-entry-sidebar">
-									<ul>
-										<li>
-											<a href="">
-												<img
-													src="images/img_1_sq.jpg"
-													alt="Image placeholder"
-													className="me-4 rounded"
-												/>
-												<div className="text">
-													<h4>
-														There’s a Cool New Way for Men to Wear Socks and
-														Sandals
-													</h4>
-													<div className="post-meta">
-														<span className="mr-2">March 15, 2018 </span>
-													</div>
-												</div>
-											</a>
-										</li>
-										<li>
-											<a href="">
-												<img
-													src="images/img_2_sq.jpg"
-													alt="Image placeholder"
-													className="me-4 rounded"
-												/>
-												<div className="text">
-													<h4>
-														There’s a Cool New Way for Men to Wear Socks and
-														Sandals
-													</h4>
-													<div className="post-meta">
-														<span className="mr-2">March 15, 2018 </span>
-													</div>
-												</div>
-											</a>
-										</li>
-										<li>
-											<a href="">
-												<img
-													src="images/img_3_sq.jpg"
-													alt="Image placeholder"
-													className="me-4 rounded"
-												/>
-												<div className="text">
-													<h4>
-														There’s a Cool New Way for Men to Wear Socks and
-														Sandals
-													</h4>
-													<div className="post-meta">
-														<span className="mr-2">March 15, 2018 </span>
-													</div>
-												</div>
-											</a>
-										</li>
-									</ul>
-								</div>
-							</div>
-							{/* <!-- END sidebar-box --> */}
-
-							<div className="sidebar-box">
-								<h3 className="heading">Categories</h3>
-								<ul className="categories">
-									<li>
-										<a href="#">
-											Food <span>(12)</span>
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											Travel <span>(22)</span>
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											Lifestyle <span>(37)</span>
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											Business <span>(42)</span>
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											Adventure <span>(14)</span>
-										</a>
-									</li>
-								</ul>
-							</div>
-							{/* <!-- END sidebar-box --> */}
-
-							<div className="sidebar-box">
-								<h3 className="heading">Tags</h3>
-								<ul className="tags">
-									<li>
-										<a href="#">Travel</a>
-									</li>
-									<li>
-										<a href="#">Adventure</a>
-									</li>
-									<li>
-										<a href="#">Food</a>
-									</li>
-									<li>
-										<a href="#">Lifestyle</a>
-									</li>
-									<li>
-										<a href="#">Business</a>
-									</li>
-									<li>
-										<a href="#">Freelancing</a>
-									</li>
-									<li>
-										<a href="#">Travel</a>
-									</li>
-									<li>
-										<a href="#">Adventure</a>
-									</li>
-									<li>
-										<a href="#">Food</a>
-									</li>
-									<li>
-										<a href="#">Lifestyle</a>
-									</li>
-									<li>
-										<a href="#">Business</a>
-									</li>
-									<li>
-										<a href="#">Freelancing</a>
-									</li>
-								</ul>
-							</div>
+							<SidebarSearch />
+							<SidebarBio />
+							<SidebarPopularPosts />
+							<SidebarCategories />
+							<SidebarTags />
 						</div>
 						{/* <!-- END sidebar --> */}
 					</div>
 				</div>
 			</section>
-
-			{/* <!-- Start posts-entry --> */}
-			<section className="section posts-entry posts-entry-sm bg-light">
-				<div className="container">
-					<div className="row mb-4">
-						<div className="col-12 text-uppercase text-black">
-							More Blog Posts
-						</div>
-					</div>
-					<div className="row">
-						<div className="col-md-6 col-lg-3">
-							<div className="blog-entry">
-								<a
-									href="single.html"
-									className="img-link"
-								>
-									<img
-										src="images/img_1_horizontal.jpg"
-										alt="Image"
-										className="img-fluid"
-									/>
-								</a>
-								<span className="date">Apr. 14th, 2022</span>
-								<h2>
-									<a href="single.html">
-										Thought you loved Python? Wait until you meet Rust
-									</a>
-								</h2>
-								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-								<p>
-									<a
-										href="#"
-										className="read-more"
-									>
-										Continue Reading
-									</a>
-								</p>
-							</div>
-						</div>
-						<div className="col-md-6 col-lg-3">
-							<div className="blog-entry">
-								<a
-									href="single.html"
-									className="img-link"
-								>
-									<img
-										src="images/img_2_horizontal.jpg"
-										alt="Image"
-										className="img-fluid"
-									/>
-								</a>
-								<span className="date">Apr. 14th, 2022</span>
-								<h2>
-									<a href="single.html">
-										Startup vs corporate: What job suits you best?
-									</a>
-								</h2>
-								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-								<p>
-									<a
-										href="#"
-										className="read-more"
-									>
-										Continue Reading
-									</a>
-								</p>
-							</div>
-						</div>
-						<div className="col-md-6 col-lg-3">
-							<div className="blog-entry">
-								<a
-									href="single.html"
-									className="img-link"
-								>
-									<img
-										src="images/img_3_horizontal.jpg"
-										alt="Image"
-										className="img-fluid"
-									/>
-								</a>
-								<span className="date">Apr. 14th, 2022</span>
-								<h2>
-									<a href="single.html">
-										UK sees highest inflation in 30 years
-									</a>
-								</h2>
-								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-								<p>
-									<a
-										href="#"
-										className="read-more"
-									>
-										Continue Reading
-									</a>
-								</p>
-							</div>
-						</div>
-						<div className="col-md-6 col-lg-3">
-							<div className="blog-entry">
-								<a
-									href="single.html"
-									className="img-link"
-								>
-									<img
-										src="images/img_4_horizontal.jpg"
-										alt="Image"
-										className="img-fluid"
-									/>
-								</a>
-								<span className="date">Apr. 14th, 2022</span>
-								<h2>
-									<a href="single.html">
-										Do not assume your user data in the cloud is safe
-									</a>
-								</h2>
-								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-								<p>
-									<a
-										href="#"
-										className="read-more"
-									>
-										Continue Reading
-									</a>
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
+			<MoreBlogPosts />
+			<Footer />
 		</>
 	);
 }
