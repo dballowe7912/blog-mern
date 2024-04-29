@@ -7,9 +7,11 @@
 		"start": "cd ./server && nodemon app.js",
 		"client": "cd ./client && npm run dev",
 		"server": "cd ./server && npm start",
-		"seedDB": "node seeds/index.js"
+		"seedDB": "node seeds/index.js",
+		"dev": "concurrently \"npm run server\" \"npm run client\""
 	},
 	"dependencies": {
+		"concurrently": "^8.2.2",
 		"cors": "^2.8.5",
 		"dotenv": "^16.4.5",
 		"express": "^4.19.2",
