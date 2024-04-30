@@ -22,6 +22,7 @@ const blogSchema = new Schema({
 	image: {
 		type: String,
 	},
+	imageArr: [],
 	category: {
 		type: String,
 	},
