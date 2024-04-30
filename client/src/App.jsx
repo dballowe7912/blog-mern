@@ -7,6 +7,8 @@ import About from "./pages/About";
 import Category from "./pages/Category";
 import Contact from "./pages/Contact";
 import SearchResult from "./pages/SearchResult";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 
 const router = createBrowserRouter([
 	{ path: "/", Component: Home, errorElement: Error },
@@ -16,6 +18,8 @@ const router = createBrowserRouter([
 	{ path: "/category", Component: Category },
 	{ path: "/contact", Component: Contact },
 	{ path: "/search", Component: SearchResult },
+	{ path: "/login", Component: Login },
+	{ path: "/register", Component: Register },
 ]);
 
 function App() {
