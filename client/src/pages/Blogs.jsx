@@ -15,36 +15,36 @@ import Footer from "../components/Footer";
 
 function Blog() {
 	const blogs = useContext(BlogContext);
-
-	return (
-		<>
-			<MobileNav />
-			<Navbar />
-			<Hero />
-			<div className="section search-result-wrap">
-				<div className="container">
-					<div className="row posts-entry">
-						<div className="col-lg-8">
-							{blogs.map((blog) => (
-								<BlogEntry
-									key={blog._id}
-									blog={blog}
-								/>
-							))}
+	if (blogs)
+		return (
+			<>
+				<MobileNav />
+				<Navbar />
+				<Hero />
+				<div className="section search-result-wrap">
+					<div className="container">
+						<div className="row posts-entry">
+							<div className="col-lg-8">
+								{blogs.map((blog) => (
+									<BlogEntry
+										key={blog._id}
+										blog={blog}
+									/>
+								))}
+							</div>
+							<div className="col-lg-4 sidebar">
+								<SidebarSearch />
+								<SidebarPopularPosts />
+								<SidebarCategories />
+								<SidebarTags />
+							</div>
 						</div>
-						<div className="col-lg-4 sidebar">
-							<SidebarSearch />
-							<SidebarPopularPosts />
-							<SidebarCategories />
-							<SidebarTags />
-						</div>
+						<Pagination />
 					</div>
-					<Pagination />
 				</div>
-			</div>
-			<Footer />
-		</>
-	);
+				<Footer />
+			</>
+		);
 }
 
 export default Blog;

@@ -13,23 +13,19 @@ import { BlogContext } from "../context/BlogState/BlogContext";
 
 function Home() {
 	const blogs = useContext(BlogContext);
-	return (
-		<>
-			<MobileNav />
-			<Navbar />
-			{/* TODO get blogs and pass to individual layouts */}
-			{/* 5 blogs needed: */}
-			<Retro />
-			<PostsEntryLeft />
-			<PostsEntryRight />
-			{/* 4 blogs needed: */}
-			<PostsEntryRow />
-			<PostsEntryAbstract />
-			{/* 9 - - blogs needed: */}
-			<PostsEntryGrid blogs={blogs} />
-			<Footer />
-			{/* <Preloader /> */}
-		</>
-	);
+	if (blogs)
+		return (
+			<>
+				<MobileNav />
+				<Navbar />
+				<Retro blogs={blogs} />
+				<PostsEntryLeft blogs={blogs} />
+				<PostsEntryRight blogs={blogs} />
+				<PostsEntryRow blogs={blogs} />
+				<PostsEntryAbstract blogs={blogs} />
+				<PostsEntryGrid blogs={blogs} />
+				<Footer />
+			</>
+		);
 }
 export default Home;
