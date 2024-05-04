@@ -1,8 +1,10 @@
+import Link from "react-router-dom";
+
 const PostEntryRowSingle = () => {
 	return (
 		<div className="col-md-6 col-lg-3">
 			<div className="blog-entry">
-				<a
+				<Link
 					href="single.html"
 					className="img-link"
 				>
@@ -11,21 +13,21 @@ const PostEntryRowSingle = () => {
 						alt="Image"
 						className="img-fluid"
 					/>
-				</a>
+				</Link>
 				<span className="date">Apr. 14th, 2022</span>
 				<h2>
-					<a href="single.html">
+					<Link href="single.html">
 						Thought you loved Python? Wait until you meet Rust
-					</a>
+					</Link>
 				</h2>
 				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
 				<p>
-					<a
+					<Link
 						href="#"
 						className="read-more"
 					>
 						Continue Reading
-					</a>
+					</Link>
 				</p>
 			</div>
 		</div>
