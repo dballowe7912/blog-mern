@@ -38,4 +38,14 @@ for client from root:
 npm run client
 ```
 
-Fusion by Donald Ballowe
+### Categories
+
+- Crime
+- News
+- Conspiracy
+- Technology
+- Gardening
+- Food
+- Pets
+
+  Fusion by Donald Ballowe

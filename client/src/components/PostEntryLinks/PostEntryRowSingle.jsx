@@ -1,11 +1,11 @@
-import Link from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const PostEntryRowSingle = () => {
 	return (
 		<div className="col-md-6 col-lg-3">
 			<div className="blog-entry">
 				<Link
-					href="single.html"
+					to="single.html"
 					className="img-link"
 				>
 					<img
@@ -16,14 +16,14 @@ const PostEntryRowSingle = () => {
 				</Link>
 				<span className="date">Apr. 14th, 2022</span>
 				<h2>
-					<Link href="single.html">
+					<Link to="single.html">
 						Thought you loved Python? Wait until you meet Rust
 					</Link>
 				</h2>
 				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
 				<p>
 					<Link
-						href="#"
+						to="#"
 						className="read-more"
 					>
 						Continue Reading
@@ -33,4 +33,5 @@ const PostEntryRowSingle = () => {
 		</div>
 	);
 };
+
 export default PostEntryRowSingle;
