@@ -1,25 +1,27 @@
+import { Link } from "react-router-dom";
+
 function PostsEntryAbstract() {
 	return (
 		<div className="section bg-light">
 			<div className="container">
 				<div className="row mb-4">
 					<div className="col-sm-6">
-						<h2 className="posts-entry-title">Travel</h2>
+						<h2 className="posts-entry-title">Crime</h2>
 					</div>
 					<div className="col-sm-6 text-sm-end">
-						<a
-							href="category.html"
+						<Link
+							to="/category/news"
 							className="read-more"
 						>
 							View All
-						</a>
+						</Link>
 					</div>
 				</div>
 
 				<div className="row align-items-stretch retro-layout-alt">
 					<div className="col-md-5 order-md-2">
-						<a
-							href="single.html"
+						<Link
+							to="/single"
 							className="hentry img-1 h-100 gradient"
 						>
 							<div
@@ -30,12 +32,12 @@ function PostsEntryAbstract() {
 								<span>February 12, 2019</span>
 								<h2>Meta unveils fees on metaverse sales</h2>
 							</div>
-						</a>
+						</Link>
 					</div>
 
 					<div className="col-md-7">
-						<a
-							href="single.html"
+						<Link
+							to="/single"
 							className="hentry img-2 v-height mb30 gradient"
 						>
 							<div
@@ -48,11 +50,11 @@ function PostsEntryAbstract() {
 								<span>February 12, 2019</span>
 								<h2>AI can now kill those annoying cookie pop-ups</h2>
 							</div>
-						</a>
+						</Link>
 
 						<div className="two-col d-block d-md-flex justify-content-between">
-							<a
-								href="single.html"
+							<Link
+								to="/single"
 								className="hentry v-height img-2 gradient"
 							>
 								<div
@@ -63,9 +65,9 @@ function PostsEntryAbstract() {
 									<span>February 12, 2019</span>
 									<h2>Don’t assume your user data in the cloud is safe</h2>
 								</div>
-							</a>
-							<a
-								href="single.html"
+							</Link>
+							<Link
+								to="/single"
 								className="hentry v-height img-2 ms-auto float-end gradient"
 							>
 								<div
@@ -76,7 +78,7 @@ function PostsEntryAbstract() {
 									<span>February 12, 2019</span>
 									<h2>Startup vs corporate: What job suits you best?</h2>
 								</div>
-							</a>
+							</Link>
 						</div>
 					</div>
 				</div>
